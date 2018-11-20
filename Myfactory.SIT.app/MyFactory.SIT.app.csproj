@@ -289,7 +289,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <None Include="Views\Shared\Logon.cshtml" />
+    <Content Include="Views\Shared\_Aempresa.cshtml" />
+    <None Include="Views\Shared\_Logon.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -316,6 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="AutoMapper\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -335,10 +337,6 @@
     <ProjectReference Include="..\MyFactory.SIT.app.Dominio\MyFactory.SIT.app.Dominio.csproj">
       <Project>{59b6a22a-0a85-4993-b583-253a3a87031a}</Project>
       <Name>MyFactory.SIT.app.Dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyFactory.SIT.app.Infra\MyFactory.SIT.app.Infra.csproj">
-      <Project>{736e65a7-fee9-407f-aa8d-b3efe2321cfe}</Project>
-      <Name>MyFactory.SIT.app.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

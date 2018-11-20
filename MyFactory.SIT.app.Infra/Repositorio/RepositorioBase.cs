@@ -10,12 +10,18 @@ namespace MyFactory.SIT.app.Infra.Repositorio
 {
     public class RepositorioBase<T> : IDisposable, IRepositorioBase<T> where T : class
     {
-        protected SITDbContext db = new SITDbContext();
+        protected SITDbContext _context;
 
+        //private readonly IRepositorioBase<T> _repository;
+
+        //public RepositorioBase(IRepositorioBase<T> repository)
+        //{
+        //    _repository = repository;
+        //}
         public void Delete(T obj)
         {
-            db.Set<T>().Remove(obj);
-            db.SaveChanges();
+            _context.Set<T>().Remove(obj);
+            _context.SaveChanges();
         }
 
         public void Dispose()
@@ -25,24 +31,24 @@ namespace MyFactory.SIT.app.Infra.Repositorio
 
         public void Include(T obj)
         {
-            db.Set<T>().Add(obj);
-            db.SaveChanges();
+            _context.Set<T>().Add(obj);
+            _context.SaveChanges();
         }
 
         public List<T> SelectAll()
         {
-            return db.Set<T>().ToList();
+            return _context.Set<T>().ToList();
         }
 
-        public T SelectbyID(int id)
+        public T SelectbyId(int id)
         {
-            return db.Set<T>().Find(id);
+            return _context.Set<T>().Find(id);
         }
 
         public void Update(T obj)
         {
-            db.Entry(obj).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
+            _context.Entry(obj).State = System.Data.Entity.EntityState.Modified;
+            _context.SaveChanges();
         }
     }
 }

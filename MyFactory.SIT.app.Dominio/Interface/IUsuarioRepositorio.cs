@@ -9,5 +9,7 @@ namespace MyFactory.SIT.app.Dominio.Interface
 {
     public interface IUsuarioRepositorio : IRepositorioBase<Usuario>
     {
+
+        bool ValidarLoginUsuario();
     }
 }

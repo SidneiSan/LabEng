@@ -1,10 +1,17 @@
 ﻿using Myfactory.SIT.app.Models;
+
 using System.Web.Mvc;
 
 namespace Myfactory.SIT.app.Controllers
 {
     public class HomeController : Controller
     {
+
+        public HomeController()
+        {
+
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -22,6 +29,11 @@ namespace Myfactory.SIT.app.Controllers
             {
                 return View(model);
             }
+
+            
+
+
+
             return View();
         }
 

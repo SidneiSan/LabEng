@@ -9,7 +9,7 @@ namespace MyFactory.SIT.app.Dominio.Interface
     public interface IRepositorioBase<T> where T : class
     {
         void Include(T obj);
-        T SelectbyID(int id);
+        T SelectbyId(int id);
         void Delete(T obj);
         void Update(T obj);
         List<T> SelectAll();

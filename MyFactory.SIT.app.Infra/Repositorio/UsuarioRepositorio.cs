@@ -11,5 +11,11 @@ namespace MyFactory.SIT.app.Infra.Repositorio
     public class UsuarioRepositorio : RepositorioBase<Usuario>, IUsuarioRepositorio
     {
 
+        public bool ValidarLoginUsuario()
+        {
+            _context.Set<Usuario>().Include(p => p.);
+
+            return true;
+        }
     }
 }
